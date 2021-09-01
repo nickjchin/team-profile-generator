@@ -43,26 +43,43 @@ function appMenu() {
           type: "input",
           name: "managerId",
           message: "Enter manager's ID: ",
-          validate(value) {
-            const valid = !isNaN(parseFloat(value));
-            return valid || "Please enter a valid number";
+          validate: function (officeNumber) {
+            valid = /^\d+$/.test(officeNumber);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid number");
+              return false;
+            }
           },
-          filter: Number,
         },
         {
           type: "input",
           name: "managerEmail",
           message: "Enter manager's email: ",
+          validate: function (email) {
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid email");
+              return false;
+            }
+          },
         },
         {
           type: "input",
           name: "managerOfficeNumber",
           message: "Enter manager's office number: ",
-          validate(value) {
-            const valid = !isNaN(parseFloat(value));
-            return valid || "Please enter a valid number";
+          validate: function (officeNumber) {
+            valid = /^\d+$/.test(officeNumber);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid number");
+              return false;
+            }
           },
-          filter: Number,
         },
       ])
       .then((answers) => {
@@ -118,6 +135,15 @@ function appMenu() {
           type: "input",
           name: "engineerEmail",
           message: "Enter engineer's email: ",
+          validate: function (email) {
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid email");
+              return false;
+            }
+          },
         },
         {
           type: "input",
@@ -128,11 +154,15 @@ function appMenu() {
           type: "input",
           name: "engineerId",
           message: "Enter engineer's ID: ",
-          validate(value) {
-            const valid = !isNaN(parseFloat(value));
-            return valid || "Please enter a valid number";
+          validate: function (officeNumber) {
+            valid = /^\d+$/.test(officeNumber);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid number");
+              return false;
+            }
           },
-          filter: Number,
         },
       ])
       .then((answers) => {
@@ -171,6 +201,15 @@ function appMenu() {
           type: "input",
           name: "internEmail",
           message: "Enter intern's email: ",
+          validate: function (email) {
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid email");
+              return false;
+            }
+          },
         },
         {
           type: "input",
@@ -181,11 +220,15 @@ function appMenu() {
           type: "input",
           name: "internId",
           message: "Enter intern's ID: ",
-          validate(value) {
-            const valid = !isNaN(parseFloat(value));
-            return valid || "Please enter a valid number";
+          validate: function (officeNumber) {
+            valid = /^\d+$/.test(officeNumber);
+            if (valid) {
+              return true;
+            } else {
+              console.log(".  Please enter a valid number");
+              return false;
+            }
           },
-          filter: Number,
         },
       ])
       .then((answers) => {
@@ -214,6 +257,7 @@ function appMenu() {
       fs.mkdirSync(OUTPUT_DIR);
     }
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+    console.log("Successfully created new team profile!");
   }
 
   createManager();
