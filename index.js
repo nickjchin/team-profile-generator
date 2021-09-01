@@ -106,6 +106,11 @@ function appMenu() {
         //
         {
           type: "input",
+          name: "engineerName",
+          message: "Enter engineer's name: ",
+        },
+        {
+          type: "input",
           name: "engineerEmail",
           message: "Enter engineer's email: ",
         },
@@ -128,7 +133,12 @@ function appMenu() {
         // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
         // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
         //
-        const engineer = new Engineer(answers.engineerEmail, answers.engineerGithub);
+        const engineer = new Engineer(
+          answers.engineerName,
+          answers.engineerId,
+          answers.engineerEmail,
+          answers.engineerOfficeNumber
+        );
         teamMembers.push(engineer);
         idArray.push(answers.engineerId);
         createTeam();
@@ -144,13 +154,18 @@ function appMenu() {
         //
         {
           type: "input",
+          name: "internName",
+          message: "Enter intern's name: ",
+        },
+        {
+          type: "input",
           name: "internEmail",
           message: "Enter intern's email: ",
         },
         {
           type: "input",
-          name: "internGithub",
-          message: "Enter intern's Github username: ",
+          name: "internSchool",
+          message: "Enter intern's school: ",
         },
         {
           type: "input",
@@ -166,7 +181,12 @@ function appMenu() {
         // 2. ADD (PUSH) THE INTERN VARIABLE TO the teamMembers ARRAY
         // 3. ADD (PUSH) THE INTERN ID TO THE idArray ARRAY
         //
-        const intern = new Engineer(answers.internEmail, answers.internGithub);
+        const intern = new Intern(
+          answers.internName,
+          answers.internId,
+          answers.internEmail,
+          answers.internSchool
+        );
         teamMembers.push(intern);
         idArray.push(answers.intern);
         createTeam();
