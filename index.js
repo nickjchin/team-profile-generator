@@ -43,6 +43,11 @@ function appMenu() {
           type: "input",
           name: "managerId",
           message: "Enter manager's ID: ",
+          validate(value) {
+            const valid = !isNaN(parseFloat(value));
+            return valid || "Please enter a valid number";
+          },
+          filter: Number,
         },
         {
           type: "input",
@@ -123,6 +128,11 @@ function appMenu() {
           type: "input",
           name: "engineerId",
           message: "Enter engineer's ID: ",
+          validate(value) {
+            const valid = !isNaN(parseFloat(value));
+            return valid || "Please enter a valid number";
+          },
+          filter: Number,
         },
       ])
       .then((answers) => {
@@ -171,6 +181,11 @@ function appMenu() {
           type: "input",
           name: "internId",
           message: "Enter intern's ID: ",
+          validate(value) {
+            const valid = !isNaN(parseFloat(value));
+            return valid || "Please enter a valid number";
+          },
+          filter: Number,
         },
       ])
       .then((answers) => {
