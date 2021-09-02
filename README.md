@@ -44,3 +44,7 @@ To test this program, you can run
 ```
 npm test
 ```
+
+## Demo
+
+![Example of final product](/output/myTeam-screenshot.PNG "My Team Profile")
