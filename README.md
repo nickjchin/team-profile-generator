@@ -11,6 +11,7 @@
 ## Description
 
 By taking the user's input, the team profile generator creates cards displaying all the employees' and mangaer's information.
+![Example of final product](/output/myTeam-screenshot.PNG "My Team Profile")
 
 ## Installation
 
@@ -47,4 +48,5 @@ npm test
 
 ## Demo
 
-![Example of final product](/output/myTeam-screenshot.PNG "My Team Profile")
+Click to view demo on youtube
+[![Demo of final product](/output/myTeam-screenshot.PNG)](https://youtu.be/LPgbDR4PX0Y)
